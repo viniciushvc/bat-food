@@ -1,0 +1,14 @@
+<h1>BatFood</h1>
+<nav *ngIf="authGuard.isAuthenticated">
+  <ul>
+    <li>
+      <a routerLink="/home" routerLinkActive="active">Home</a>
+    </li>
+    <li>
+      <a routerLink="/order" routerLinkActive="active">Order</a>
+    </li>
+  </ul>
+
+  <app-button class="btn-primary" (click)="authGuard.logOut()" label="logout"></app-button>
+
+</nav>

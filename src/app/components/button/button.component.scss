@@ -1,0 +1,38 @@
+@import '../../../assets/scss/variables';
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-success {
+  background-color: $success-color;
+}
+.btn-primary {
+  background-color: $primary-color;
+}
+.btn-warning {
+  color: #212529;
+  background-color: $warning-color;
+}
+.btn-danger {
+  background-color: $danger-color;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
