@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthGuard } from './core/auth/auth-guard.service';
 
 @Component({
   selector: 'app-root',
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'batfood';
+
+  constructor(public authGuard: AuthGuard) { }
 }

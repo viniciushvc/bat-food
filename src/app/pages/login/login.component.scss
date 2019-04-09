@@ -1,26 +1,62 @@
+@import '../../../assets/scss/variables';
+
+/* Formulário */
+
+.flex {
+  height: 90vh; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
 .login {
-  width: 500px;
-  display: flex;
-  align-items: center;
-  align-content: center;
+  width: 400px;
 }
 
-.form-group {
-  margin-bottom: 1rem;
+.login-welcome {
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
-.form-control {
-  display: block;
+.login-form {
   width: 100%;
-  height: calc(1.5em + .75rem + 2px);
-  padding: .375rem .75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #ced4da;
-  border-radius: .25rem;
-  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  box-shadow: 4px 4px 44px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: $light-color;
+  border-radius: 4px;
+}
+
+/* Inputs */
+.form-control {
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 40px;
+  padding: 13px 20px;
+  border: 1px solid #e5edef;
+  transition: .3s;
+  border-radius: 4px;
+  margin: 2px 6px 16px 0;
+}
+
+/* Logo no formulário */
+.img-logo {
+  margin-bottom: 2rem;
+}
+
+/* Texto para criar conta */
+.form-create {
+  margin: 2rem 0;
+}
+
+.form-create-link {
+  color: $danger-color;
+  text-decoration: none;
+}
+
+@media (max-width: $break-small) {
+  .login-form {
+    padding: 10px;
+    box-shadow: none;
+  }
 }

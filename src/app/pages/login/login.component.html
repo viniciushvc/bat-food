@@ -1,16 +1,21 @@
-<div class="login">
-  <form [formGroup]="form" (ngSubmit)="submitForm()">
-    <div class="form-group">
-      <label for="username">login</label>
-      <input type="text" class="form-control" formControlName="username">
-    </div>
+<div class="flex"> 
+  <div class="login">
+    <div class="login-form">
+      <form [formGroup]="form" (ngSubmit)="submitForm()">
+       <p class="login-welcome">Bem vindo(a) de volta</p>
 
-    <div class="form-group">
-      <label for="password">senha</label>
-      <input type="text" class="form-control" formControlName="password">
-    </div>
+        <input type="text" class="form-control" formControlName="username" placeholder="E-mail" autofocus>
 
-    <app-button class="btn-primary btn-block" type="submit" label="login"></app-button>
+        <input type="password" class="form-control" formControlName="password" placeholder="Senha">
 
-  </form>
+        <btn class="btn-danger btn-block btn-lg bold" type="submit" label="Acessar sua conta"></btn>
+      </form>
+  </div>
+
+    <p class="form-create center bold">
+      <span>Não tem uma conta ainda? </span>
+        
+      <a href="#" class="form-create-link">Cadastre-se</a>
+    </p>
+  </div>
 </div>
