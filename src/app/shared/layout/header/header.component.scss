@@ -3,3 +3,20 @@
 a.active {
   font-weight: 700;
 }
+
+.navbar {
+  background-color: $light-color;
+  display: flex;
+  padding: 1rem;
+  position: sticky;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar-right {
+  display: flex;
+  align-self: center;
+}

@@ -1,16 +1,15 @@
 <div class="container-fluid">
-    <div class="row">
+  <div class="row">
+    <div class="col-3" *ngFor="let item of list">
+      <div class="card">
+        <div>{{item.name}}</div>
 
-      <div class="col-4" *ngFor="let item of list">
-  <div class="card">
-    <div>{{item.name}}</div>
+        <div>{{item.category}}</div>
 
-    <div>{{item.category}}</div>
+        <div>{{item.price}}</div>
 
-    <div>{{item.price}}</div>
-
-    <div>{{item.time}}</div>
+        <div>{{item.time}}</div>
+      </div>
+    </div>
   </div>
-  </div>
-</div>
 </div>

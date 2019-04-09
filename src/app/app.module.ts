@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { RoutesModule } from './routes';
+import { AppRoutesModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/layout/header/header.component';
 import { FooterComponent } from './shared/layout/footer/footer.component';
@@ -25,7 +25,7 @@ import { ButtonComponent } from './components/button/button.component';
   ],
   imports: [
     BrowserModule,
-    RoutesModule,
+    AppRoutesModule,
     FormsModule,
     ReactiveFormsModule
   ],

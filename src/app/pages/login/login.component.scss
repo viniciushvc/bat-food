@@ -3,10 +3,17 @@
 /* Formulário */
 
 .flex {
-  height: 90vh; 
+  height: 100vh; 
   display: flex; 
   align-items: center; 
   justify-content: center;
+  background-image: url('../../../assets/images/bg-login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  object-fit: cover;
+  width: 100%;
+
 }
 
 .login {
@@ -16,6 +23,7 @@
 .login-welcome {
   font-size: 1.7rem;
   font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 .login-form {

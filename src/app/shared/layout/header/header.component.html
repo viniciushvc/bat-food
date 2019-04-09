@@ -1,13 +1,21 @@
-<nav class="navbar">
-  <ul>
+<header class="navbar">
+
+  <div class="navbar-brand">
+    Batfood
+  </div>
+
+  <!-- <ul>
     <li>
       <a routerLink="/home" routerLinkActive="active">Home</a>
     </li>
     <li>
       <a routerLink="/order" routerLinkActive="active">Order</a>
     </li>
-  </ul>
+  </ul> -->
 
-  <btn class="btn-primary" (click)="authGuard.logOut()" label="logout"></btn>
+  <div class="navbar-right">
+    <div class="navbar-logout" (click)="authGuard.logOut()">Sair</div>
+  </div>
 
-</nav>
+
+</header>
