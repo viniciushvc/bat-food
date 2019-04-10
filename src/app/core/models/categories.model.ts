@@ -1,7 +1,7 @@
-import { Products } from './products.model';
+import { Products } from './products.model'
 
 export interface Categories {
-  id: number,
-  name: string;
-  products: Products;
+  id: number
+  name: string
+  products: Products
 }

@@ -1,11 +1,10 @@
 @import '../../../assets/scss/variables';
 
 /* Formulário */
-
 .flex {
-  height: 100vh; 
-  display: flex; 
-  align-items: center; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
   justify-content: center;
   background-image: url('../../../assets/images/bg-login.jpg');
   background-repeat: no-repeat;
@@ -13,7 +12,6 @@
   background-position: center center;
   object-fit: cover;
   width: 100%;
-
 }
 
 .login {
@@ -42,7 +40,7 @@
   height: 40px;
   padding: 13px 20px;
   border: 1px solid #e5edef;
-  transition: .3s;
+  transition: 0.3s;
   border-radius: 4px;
   margin: 2px 6px 16px 0;
 }

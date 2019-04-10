@@ -1,31 +1,38 @@
-import { Injectable } from "@angular/core";
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable, ReplaySubject } from 'rxjs';
-import { TokenService } from './token.service';
+import { Injectable } from '@angular/core'
+import {
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+  Router,
+} from '@angular/router'
+import { Observable, ReplaySubject } from 'rxjs'
+import { TokenService } from './token.service'
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+  public isAuthenticated: boolean
 
-  public isAuthenticated: boolean;
-
-  constructor(private tokenService: TokenService, private router: Router) { }
+  constructor(private tokenService: TokenService, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    this.isAuthenticated = this.tokenService.getToken().length > 0
 
-    this.isAuthenticated = this.tokenService.getToken().length > 0;
-
-    return this.isAuthenticated;
+    return this.isAuthenticated
   }
 
   logOut() {
-    this.tokenService.destroyToken();
+    this.tokenService.destroyToken()
 
-    this.isAuthenticated = false;
+    this.isAuthenticated = false
 
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/')
   }
-
 }

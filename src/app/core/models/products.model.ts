@@ -1,4 +1,4 @@
 export interface Products {
-  id: number;
-  name: string;
+  id: number
+  name: string
 }

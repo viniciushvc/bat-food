@@ -1,28 +1,32 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Errors } from 'src/app/core/models/errors.model';
-import { ActivatedRoute, Router } from '@angular/router';
-import { TokenService } from 'src/app/core/auth/token.service';
+import { Component, OnInit } from '@angular/core'
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
+import { Errors } from 'src/app/core/models/errors.model'
+import { ActivatedRoute, Router } from '@angular/router'
+import { TokenService } from 'src/app/core/auth/token.service'
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  authType: String = ''
+  title: String = ''
+  errors: Errors = { errors: {} }
+  isSubmitting = false
 
-  authType: String = '';
-  title: String = '';
-  errors: Errors = { errors: {} };
-  isSubmitting = false;
+  form: FormGroup
 
-  form: FormGroup;
-
-  constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private tokenService: TokenService) {
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private tokenService: TokenService
+  ) {
     this.form = this.fb.group({
-      'username': ['', Validators.required],
-      'password': ['', Validators.required]
-    });
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+    })
   }
 
   ngOnInit() {
@@ -35,20 +39,19 @@ export class LoginComponent implements OnInit {
       // if (this.authType === 'register') {
       //   this.form.addControl('username', new FormControl());
       // }
-    });
+    })
   }
 
   submitForm() {
-    this.isSubmitting = true;
-    this.errors = { errors: {} };
+    this.isSubmitting = true
+    this.errors = { errors: {} }
 
-    const credentials = this.form.value;
+    const credentials = this.form.value
 
     if (this.form.valid) {
       this.tokenService.saveToken(this.form.value.username)
 
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/home')
     }
   }
-
 }
