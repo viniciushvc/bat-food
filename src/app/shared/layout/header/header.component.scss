@@ -1,22 +1,55 @@
 @import '../../../../assets/scss/variables';
 
-a.active {
-  font-weight: 700;
-}
-
 .navbar {
-  background-color: $light-color;
+  background-color: $white-color;
   display: flex;
   padding: 1rem;
   position: sticky;
+  border-bottom: 1px solid #f2f2f2;
+  font-size: 1.1rem;
 }
 
 .navbar-brand {
+  display: inherit;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
 }
 
+.navbar-search {
+  display: inherit;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.navbar-search input {
+  display: inherit;
+  height: auto;
+  width: 400px;
+  padding: .7rem;
+  border: 1px solid #f2f2f2;
+  font-size: 1rem;
+  line-height: 1.25em;
+  font-weight: 300;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
 .navbar-right {
-  display: flex;
-  align-self: center;
+  margin-left: auto;
+  display: inherit;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.navbar-right-item {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+@media (max-width: $break-small) {
+  .navbar-search {
+    display: none;
+  }
 }

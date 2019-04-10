@@ -1,8 +1,6 @@
 @import './assets/scss/grid.scss';
 
 html {
-  box-sizing: border-box;
-  -ms-overflow-style: scrollbar;
   font-family: sans-serif;
   color: #555d66;
   font-size: 14px;
@@ -14,11 +12,6 @@ body {
   margin: 0;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
 
 .center {
   text-align: center;

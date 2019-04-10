@@ -4,6 +4,14 @@
     Batfood
   </div>
 
+  <div class="navbar-search">
+
+    <form>
+      <input type="text" placeholder="Buscar..." />
+    </form>
+
+  </div>
+
   <!-- <ul>
     <li>
       <a routerLink="/home" routerLinkActive="active">Home</a>
@@ -14,7 +22,9 @@
   </ul> -->
 
   <div class="navbar-right">
-    <div class="navbar-logout" (click)="authGuard.logOut()">Sair</div>
+    <div class="navbar-right-item">Sacola</div>
+
+    <div class="navbar-right-item" (click)="authGuard.logOut()">Sair</div>
   </div>
 
 
