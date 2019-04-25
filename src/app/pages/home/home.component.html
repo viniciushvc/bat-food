@@ -1,17 +1,45 @@
-<div class="container-fluid">
-  <h2>Restaurantes</h2>
-
+<div class="container">
   <div class="row">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of list">
-      <div class="card">
-        <div>{{ item.name }}</div>
+    <div class="col-md-8">
+      <div *ngFor="let category of list">
+        <h1>{{ category.name }}</h1>
 
-        <div>{{ item.category }}</div>
+        <div class="row">
+          <div
+            class="col-12 col-sm-6 col-md-4 col-lg-3"
+            *ngFor="let item of category.items"
+            (click)="selectItem(item)"
+          >
+            <div class="card">
+              <img class="card-image" [src]="item.image" alt="item.name" />
 
-        <div>{{ item.price }}</div>
+              <div>{{ item.name }}</div>
 
-        <div>{{ item.time }}</div>
+              <div>{{ item.price }}</div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <h1>Itens selecionados</h1>
+
+        <h2 *ngIf="totalPay > 0">Valor total {{ totalPay }}</h2>
+
+        <div *ngFor="let selected of selectedItems; index as i">
+          {{ selected.name }} x {{ selected.price }}
+
+          <h5 (click)="removeItem(i)">remover item</h5>
+        </div>
+      </div>
+
+      <btn
+        *ngIf="selectedItems.length"
+        class="btn-danger btn-block"
+        label="Finalizar pedido"
+        (onClick)="finishOrder()"
+      ></btn>
     </div>
   </div>
 </div>
