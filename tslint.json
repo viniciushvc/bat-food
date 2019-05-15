@@ -54,6 +54,8 @@
     "template-no-negated-async": true,
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true,
-    "semicolon": [true, "never"]
+    "semicolon": [true, "never"],
+    "disable-next-line": "curly",
+    "curly": [true, "same-line-single-line"]
   }
 }
