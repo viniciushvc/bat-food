@@ -12,6 +12,7 @@ import { LoginComponent } from './pages/login/login.component'
 import { AuthGuard } from './core/auth/auth-guard.service'
 import { TokenService } from './core/auth/token.service'
 import { ButtonComponent } from './components/button/button.component'
+import { PricePipe } from './shared/pipes/price.pipe'
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ButtonComponent } from './components/button/button.component'
     OrderComponent,
     LoginComponent,
     ButtonComponent,
+    PricePipe,
   ],
   imports: [BrowserModule, AppRoutesModule, FormsModule, ReactiveFormsModule],
   providers: [AuthGuard, TokenService],
