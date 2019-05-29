@@ -20,9 +20,8 @@ Para executar testes: `ng test`
 
 Versão do angular `8.0.0-beta.11`
 
-### Boas práticas e padrões
+### Linters
 
-- Editor: [Vs Code](https://code.visualstudio.com/)
 - Lint: [ESLint](https://marketplace.visualstudio.com/itemdetails?itemName=dbaeumer.vscode-eslint)
 - Identação: [Prettier](https://marketplace.visualstudio.com/itemdetails?itemName=esbenp.prettier-vscode)
-- Identação CSS: [Stylelint](https://marketplace.visualstudio.com/itemdetails?itemName=shinnn.stylelint)
+- CSS: [Stylelint](https://marketplace.visualstudio.com/itemdetails?itemName=shinnn.stylelint)
