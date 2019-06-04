@@ -4,28 +4,37 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppRoutesModule } from './app.routes'
 import { AppComponent } from './app.component'
+
+// layout
 import { HeaderComponent } from './shared/layout/header/header.component'
 import { FooterComponent } from './shared/layout/footer/footer.component'
-import { HomeComponent } from './pages/home/home.component'
-import { OrderComponent } from './pages/order/order.component'
-import { LoginComponent } from './pages/login/login.component'
+
+// components
+import { ComponentsModule } from './components/components.module'
+
+// guard
 import { AuthGuard } from './core/auth/auth-guard.service'
+
+// pages
+import { LoginComponent } from './pages/login/login.component'
+
+// services
 import { TokenService } from './core/auth/token.service'
-import { ButtonComponent } from './components/button/button.component'
-import { PricePipe } from './shared/pipes/price.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent,
-    OrderComponent,
     LoginComponent,
-    ButtonComponent,
-    PricePipe,
   ],
-  imports: [BrowserModule, AppRoutesModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutesModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ComponentsModule,
+  ],
   providers: [AuthGuard, TokenService],
   bootstrap: [AppComponent],
 })

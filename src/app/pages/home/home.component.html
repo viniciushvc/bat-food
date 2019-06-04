@@ -17,7 +17,7 @@
 
                 <p class="card-description">{{ item.description }}</p>
 
-                <span class="card-price">R$ {{ item.price | price }}</span>
+                <span class="card-price">R${{ item.price | price }}</span>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
           class="order-item"
           *ngFor="let selected of selectedItems; index as i"
         >
-          {{ selected.name }} x R$ {{ selected.price | price }}
+          {{ selected.name }} x R${{ selected.price | price }}
 
           <h5 (click)="removeItem(i)">Remover item</h5>
         </div>
@@ -40,7 +40,7 @@
         <div class="order-total" *ngIf="totalPay > 0">
           <h2 class="order-price">Valor total</h2>
 
-          <h2>{{ totalPay | price }}</h2>
+          <h2 *ngIf="totalPay">R${{ totalPay | price }}</h2>
         </div>
 
         <btn

@@ -11,7 +11,7 @@ export class ButtonComponent {
   @Input() class: string
 
   @Input() type: string
-  
+
   @Output() onClick = new EventEmitter<any>()
 
   constructor() {}

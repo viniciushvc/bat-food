@@ -1,24 +1,33 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { HomeComponent } from './pages/home/home.component'
-import { OrderComponent } from './pages/order/order.component'
-import { LoginComponent } from './pages/login/login.component'
+
 import { AuthGuard } from './core/auth/auth-guard.service'
 
+import { LoginComponent } from './pages/login/login.component'
+
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
-  },
   {
     path: '',
     component: LoginComponent,
   },
   {
+    path: 'home',
+    loadChildren: './pages/home/home.module#HomeModule',
+  },
+
+  {
     path: 'order',
-    component: OrderComponent,
+    loadChildren: './pages/order/order.module#OrderModule',
+  },
+  {
+    path: 'category',
     canActivate: [AuthGuard],
+    loadChildren: './pages/category/category.module#CategoryModule',
+  },
+  {
+    path: 'subcategory',
+    canActivate: [AuthGuard],
+    loadChildren: './pages/subcategory/subcategory.module#SubcategoryModule',
   },
 ]
 
