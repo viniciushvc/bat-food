@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  api_url: 'http://localhost:4200/'
-};
+  api_url: 'https://jsonplaceholder.typicode.com/',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

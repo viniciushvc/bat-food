@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutesModule } from './app.routes'
 import { AppComponent } from './app.component'
@@ -30,10 +31,11 @@ import { TokenService } from './core/auth/token.service'
   ],
   imports: [
     BrowserModule,
-    AppRoutesModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
+    AppRoutesModule,
   ],
   providers: [AuthGuard, TokenService],
   bootstrap: [AppComponent],

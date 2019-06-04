@@ -10,6 +10,8 @@ import { HomeComponent } from './home.component'
 // pipe
 import { PricePipe } from 'src/app/shared/pipes/price.pipe'
 
+import { HomeService } from './home.service'
+
 @NgModule({
   declarations: [HomeComponent, PricePipe],
   imports: [
@@ -19,7 +21,7 @@ import { PricePipe } from 'src/app/shared/pipes/price.pipe'
     HomeRoutesModule,
     ComponentsModule,
   ],
-  providers: [],
+  providers: [HomeService],
   bootstrap: [],
 })
 export class HomeModule {}
