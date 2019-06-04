@@ -18,7 +18,7 @@ Para compilar o projeto: `ng build`
 
 Para executar testes: `ng test`
 
-Versão do angular `8.0.0-beta.11`
+Versão do angular `8.0`
 
 ### Linters
 
