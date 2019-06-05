@@ -13,7 +13,19 @@ export class CategoryCreateComponent implements OnInit {
    */
   form: FormGroup
 
-  constructor(private fb: FormBuilder, private service: CategoryService) {
+  constructor(private fb: FormBuilder, private service: CategoryService) {}
+
+  /**
+   * Inicialização
+   */
+  ngOnInit() {
+    this.createForm()
+  }
+
+  /**
+   * Cria formulário
+   */
+  private createForm() {
     this.form = this.fb.group({
       id: ['', Validators.required],
       nome: ['', Validators.required],
@@ -21,9 +33,10 @@ export class CategoryCreateComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
-
+  /**
+   * Cria nova categoria
+   */
   submit() {
-    this.service.post(this.form.value).subscribe(res => alert(res))
+    this.service.post(this.form.value).subscribe(res => console.log(res))
   }
 }

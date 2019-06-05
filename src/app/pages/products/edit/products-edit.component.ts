@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router'
+
 import { ProductsService } from '../products.service'
+import { CategoryService } from '../../category/category.service'
 
 @Component({
   selector: 'app-products-edit',
@@ -10,6 +12,10 @@ import { ProductsService } from '../products.service'
 })
 export class ProductsEditComponent implements OnInit {
   /**
+   * Lista de categorias
+   */
+  categories = []
+  /**
    * Formulário de edição
    */
   form: FormGroup
@@ -17,24 +23,53 @@ export class ProductsEditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private service: ProductsService
-  ) {
+    private service: ProductsService,
+    private category: CategoryService
+  ) {}
+
+  /**
+   * Inicialização
+   */
+  ngOnInit() {
+    this.createForm()
+
+    this.get()
+
+    this.getCategories()
+  }
+
+  /**
+   * Cria formulário
+   */
+  private createForm() {
     this.form = this.fb.group({
       id: ['', Validators.required],
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
+      categoria: ['', Validators.required],
     })
   }
 
-  ngOnInit() {
-    this.get(this.route.snapshot.paramMap.get('id'))
+  /**
+   * Carrega lista de categorias
+   */
+  private getCategories() {
+    this.category.getAll().subscribe(r => (this.categories = r))
   }
 
-  private get(id: string) {
+  /**
+   * Carrega dados do produto selecionado
+   */
+  private get() {
+    const id = this.route.snapshot.paramMap.get('id')
+
     this.service.get(id).subscribe(res => this.form.patchValue(res))
   }
 
+  /**
+   * Realiza alteração no produto
+   */
   submit() {
-    this.service.post(this.form.value).subscribe(res => alert(res))
+    this.service.put(this.form.value).subscribe(res => console.log(res))
   }
 }

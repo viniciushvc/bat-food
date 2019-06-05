@@ -18,7 +18,21 @@ export class CategoryEditComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private service: CategoryService
-  ) {
+  ) {}
+
+  /**
+   * Inicialização
+   */
+  ngOnInit() {
+    this.createForm()
+
+    this.get()
+  }
+
+  /**
+   * Cria formulário
+   */
+  private createForm() {
     this.form = this.fb.group({
       id: ['', Validators.required],
       nome: ['', Validators.required],
@@ -26,15 +40,19 @@ export class CategoryEditComponent implements OnInit {
     })
   }
 
-  ngOnInit() {
-    this.get(this.route.snapshot.paramMap.get('id'))
-  }
+  /**
+   * Carrega dados da categoria selecionada
+   */
+  private get() {
+    const id = this.route.snapshot.paramMap.get('id')
 
-  private get(id: string) {
     this.service.get(id).subscribe(res => this.form.patchValue(res))
   }
 
+  /**
+   * Realiza alteração na categoria
+   */
   submit() {
-    this.service.post(this.form.value).subscribe(res => alert(res))
+    this.service.put(this.form.value).subscribe(res => console.log(res))
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+
 import { ProductsService } from '../products.service'
+import { CategoryService } from '../../category/category.service'
 
 @Component({
   selector: 'app-products-create',
@@ -9,21 +11,52 @@ import { ProductsService } from '../products.service'
 })
 export class ProductsCreateComponent implements OnInit {
   /**
+   * Lista de categorias
+   */
+  categories = []
+
+  /**
    * Formulário de cadastro
    */
   form: FormGroup
 
-  constructor(private fb: FormBuilder, private service: ProductsService) {
+  constructor(
+    private fb: FormBuilder,
+    private service: ProductsService,
+    private category: CategoryService
+  ) {}
+
+  /**
+   * Inicialização
+   */
+  ngOnInit() {
+    this.createForm()
+
+    this.getCategories()
+  }
+
+  /**
+   * Cria formulário
+   */
+  private createForm() {
     this.form = this.fb.group({
-      id: ['', Validators.required],
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
+      categoria: ['', Validators.required],
     })
   }
 
-  ngOnInit() {}
+  /**
+   * Carrega lista de categorias
+   */
+  private getCategories() {
+    this.category.getAll().subscribe(r => (this.categories = r))
+  }
 
+  /**
+   * Cria novo produto
+   */
   submit() {
-    this.service.post(this.form.value).subscribe(res => alert(res))
+    this.service.post(this.form.value).subscribe(res => console.log(res))
   }
 }

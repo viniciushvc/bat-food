@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Categorias</h1>
+  <h1>Produtos</h1>
 
-  <btn label="Nova categoria" class="btn-success" routerLink="create"></btn>
+  <btn label="Novo produto" class="btn-success" routerLink="create"></btn>
 
   <div class="mt-4">
     <div class="form">
@@ -17,13 +17,13 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let categorie of categories">
-              <td>{{ categorie.nome }}</td>
+            <tr *ngFor="let product of products">
+              <td>{{ product.nome }}</td>
 
-              <td>{{ categorie.descricao }}</td>
+              <td>{{ product.descricao }}</td>
 
               <td class="text-center">
-                <a [routerLink]="['category', categorie.id, 'edit']">
+                <a [routerLink]="['category', product.id, 'edit']">
                   <img
                     src="../../../../assets/images/edit.svg"
                     alt="editar registro"

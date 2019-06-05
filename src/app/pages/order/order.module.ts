@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-
 import { OrderRoutesModule } from './order.routes'
 
-import { OrderComponent } from './order.component'
+import { OrderGetComponent } from './get/order.component'
 
 @NgModule({
-  declarations: [OrderComponent],
+  declarations: [OrderGetComponent],
   imports: [CommonModule, FormsModule, ReactiveFormsModule, OrderRoutesModule],
   providers: [],
   bootstrap: [],

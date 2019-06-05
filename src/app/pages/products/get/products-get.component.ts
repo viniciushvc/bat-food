@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+
 import { ProductsService } from '../products.service'
 
 @Component({
@@ -10,11 +11,24 @@ import { ProductsService } from '../products.service'
   ],
 })
 export class ProductsGetComponent implements OnInit {
-  categories = []
+  /**
+   * Lista de produtos
+   */
+  products = []
 
   constructor(private service: ProductsService) {}
 
+  /**
+   * Inicialização
+   */
   ngOnInit() {
-    this.service.getAll().subscribe(res => (this.categories = res))
+    this.get()
+  }
+
+  /**
+   * Carrega lista de produtos
+   */
+  private get() {
+    this.service.getAll().subscribe(res => (this.products = res))
   }
 }

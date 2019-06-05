@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div *ngFor="let category of list">
-        <h1>{{ category.name }}</h1>
+      <div *ngFor="let product of products">
+        <h1>{{ product.name }}</h1>
 
         <div class="row">
           <div
             class="col-12 col-sm-6 col-md-4"
-            *ngFor="let item of category.items"
+            *ngFor="let item of product.items"
           >
             <div class="card" (click)="selectItem(item)">
               <img class="card-image" [src]="item.image" alt="item.name" />

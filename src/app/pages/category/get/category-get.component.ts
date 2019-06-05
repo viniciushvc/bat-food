@@ -1,20 +1,32 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
+
 import { CategoryService } from '../category.service'
 
 @Component({
   selector: 'app-category-get',
   templateUrl: './category-get.component.html',
-  styleUrls: [
-    '../../../../assets/scss/form.scss',
-    '../../../../assets/scss/table.scss',
-  ],
+  styleUrls: ['../../../../assets/scss/table.scss'],
 })
 export class CategoryGetComponent implements OnInit {
-  categories = []
+  /**
+   * Lista de categorias
+   */
+  categories$: Observable<any>
 
   constructor(private service: CategoryService) {}
 
+  /**
+   * Inicialização
+   */
   ngOnInit() {
-    this.service.getAll().subscribe(res => (this.categories = res))
+    this.get()
+  }
+
+  /**
+   * Carrega lista de categorias
+   */
+  private get() {
+    this.categories$ = this.service.getAll()
   }
 }
