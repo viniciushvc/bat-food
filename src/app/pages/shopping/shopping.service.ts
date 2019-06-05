@@ -8,7 +8,7 @@ import { Observable } from 'rxjs'
 export class ShoppingService {
   constructor(private service: ApiService) {}
 
-  getData(): Observable<any> {
-    return this.service.get('posts')
+  post(data: object): Observable<any> {
+    return this.service.post('pedido', data)
   }
 }

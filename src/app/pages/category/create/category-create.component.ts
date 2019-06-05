@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { Router } from '@angular/router'
+
 import { CategoryService } from '../category.service'
 
 @Component({
@@ -13,7 +15,11 @@ export class CategoryCreateComponent implements OnInit {
    */
   form: FormGroup
 
-  constructor(private fb: FormBuilder, private service: CategoryService) {}
+  constructor(
+    private fb: FormBuilder,
+    private service: CategoryService,
+    private router: Router
+  ) {}
 
   /**
    * Inicialização
@@ -37,6 +43,9 @@ export class CategoryCreateComponent implements OnInit {
    * Cria nova categoria
    */
   submit() {
-    this.service.post(this.form.value).subscribe(res => console.log(res))
+    if (this.form.valid)
+      this.service
+        .post(this.form.value)
+        .subscribe(() => this.router.navigate(['/category']))
   }
 }

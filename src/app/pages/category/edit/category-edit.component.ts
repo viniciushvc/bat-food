@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 import { CategoryService } from '../category.service'
 
 @Component({
@@ -17,7 +17,8 @@ export class CategoryEditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private service: CategoryService
+    private service: CategoryService,
+    private router: Router
   ) {}
 
   /**
@@ -53,6 +54,9 @@ export class CategoryEditComponent implements OnInit {
    * Realiza alteração na categoria
    */
   submit() {
-    this.service.put(this.form.value).subscribe(res => console.log(res))
+    if (this.form.valid)
+      this.service
+        .put(this.form.value)
+        .subscribe(() => this.router.navigate(['/category']))
   }
 }

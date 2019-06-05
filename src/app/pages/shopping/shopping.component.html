@@ -1,26 +1,32 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <div *ngFor="let product of products">
-        <h1>{{ product.name }}</h1>
+      <div *ngFor="let category of categories">
+        <h1>{{ category.nome }}</h1>
 
         <div class="row">
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            *ngFor="let item of product.items"
-          >
-            <div class="card" (click)="selectItem(item)">
-              <img class="card-image" [src]="item.image" alt="item.name" />
+          <ng-container *ngFor="let product of products">
+            <div
+              class="col-12 col-sm-6 col-md-4"
+              *ngIf="category.id === product.categoria_id"
+            >
+              <div class="card" (click)="selectItem(product)">
+                <img
+                  class="card-image"
+                  [src]="product.imagem"
+                  alt="item.descricao"
+                />
 
-              <div class="card-content">
-                <h1 class="card-title">{{ item.name }}</h1>
+                <div class="card-content">
+                  <h1 class="card-title">{{ product.nome }}</h1>
 
-                <p class="card-description">{{ item.description }}</p>
+                  <p class="card-description">{{ product.descricao }}</p>
 
-                <span class="card-price">R${{ item.price | price }}</span>
+                  <span class="card-price">R${{ product.preco | price }}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
@@ -32,7 +38,7 @@
           class="order-item"
           *ngFor="let selected of selectedItems; index as i"
         >
-          {{ selected.name }} x R${{ selected.price | price }}
+          {{ selected.nome }} x R${{ selected.preco | price }}
 
           <h5 (click)="removeItem(i)">Remover item</h5>
         </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 import { ProductsService } from '../products.service'
 import { CategoryService } from '../../category/category.service'
@@ -24,7 +24,8 @@ export class ProductsEditComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private service: ProductsService,
-    private category: CategoryService
+    private category: CategoryService,
+    private router: Router
   ) {}
 
   /**
@@ -70,6 +71,9 @@ export class ProductsEditComponent implements OnInit {
    * Realiza alteração no produto
    */
   submit() {
-    this.service.put(this.form.value).subscribe(res => console.log(res))
+    if (this.form.valid)
+      this.service
+        .put(this.form.value)
+        .subscribe(() => this.router.navigate(['/products']))
   }
 }

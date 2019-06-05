@@ -3,6 +3,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 
 import { ProductsService } from '../products.service'
 import { CategoryService } from '../../category/category.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-products-create',
@@ -23,7 +24,8 @@ export class ProductsCreateComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private service: ProductsService,
-    private category: CategoryService
+    private category: CategoryService,
+    private router: Router
   ) {}
 
   /**
@@ -58,6 +60,8 @@ export class ProductsCreateComponent implements OnInit {
    */
   submit() {
     if (this.form.valid)
-      this.service.post(this.form.value).subscribe(res => console.log(res))
+      this.service
+        .post(this.form.value)
+        .subscribe(() => this.router.navigate(['/products']))
   }
 }
