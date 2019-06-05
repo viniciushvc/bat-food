@@ -42,7 +42,7 @@ export class ProductsCreateComponent implements OnInit {
     this.form = this.fb.group({
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
-      categoria: ['', Validators.required],
+      categoria_id: ['', Validators.required],
     })
   }
 
@@ -57,6 +57,7 @@ export class ProductsCreateComponent implements OnInit {
    * Cria novo produto
    */
   submit() {
-    this.service.post(this.form.value).subscribe(res => console.log(res))
+    if (this.form.valid)
+      this.service.post(this.form.value).subscribe(res => console.log(res))
   }
 }
