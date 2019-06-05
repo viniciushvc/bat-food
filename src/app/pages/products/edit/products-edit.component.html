@@ -23,12 +23,21 @@
 
     <label class="input-title">Categoria</label>
 
-    <select class="custom-select" formControlName="categoria">
+    <select class="custom-select" formControlName="categoria_id">
       <option hidden selected>Selecionar</option>
       <option *ngFor="let category of categories" [value]="category.id">
         {{ category.nome }}
       </option>
     </select>
+
+    <label class="input-title">Imagem</label>
+
+    <input
+      type="text"
+      class="form-control"
+      formControlName="imagem"
+      placeholder="Inserir link da imagem"
+    />
 
     <btn
       class="btn-success btn-lg bold mr-2"

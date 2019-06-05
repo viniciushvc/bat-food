@@ -45,6 +45,7 @@ export class ProductsCreateComponent implements OnInit {
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
       categoria_id: ['', Validators.required],
+      imagem: ['', Validators.required],
     })
   }
 
