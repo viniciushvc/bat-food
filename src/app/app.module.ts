@@ -13,10 +13,11 @@ import { HeaderComponent } from './shared/layout/header/header.component'
 import { ComponentsModule } from './components/components.module'
 
 // pages
-import { HomeComponent } from './pages/home/home.component'
+import { HomeComponent } from './pages/home/home.component';
+import { MobileMenuComponent } from './shared/layout/mobile-menu/mobile-menu.component'
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent],
+  declarations: [AppComponent, HeaderComponent, HomeComponent, MobileMenuComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

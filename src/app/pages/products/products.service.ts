@@ -8,7 +8,15 @@ import { Observable } from 'rxjs'
 export class ProductsService {
   constructor(private service: ApiService) {}
 
-  getData(): Observable<any> {
-    return this.service.get('subcategoria')
+  getAll(): Observable<any> {
+    return this.service.get('produto')
+  }
+
+  get(id: string): Observable<any> {
+    return this.service.get(`produto/${id}`)
+  }
+
+  post(data: object): Observable<any> {
+    return this.service.post('produto', data)
   }
 }

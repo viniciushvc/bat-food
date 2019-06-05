@@ -5,15 +5,14 @@
 
   <div *ngIf="api.isLoading">
     <img
-      style="margin-top: .7rem;"
-      class="ml-3"
+      class="ml-3 loading"
       src="../../../../assets/images/loading.svg"
       alt="carregando"
-      height="10"
+      [height]="isSM ? '5' : '10'"
     />
   </div>
 
-  <div class="navbar-right">
+  <div class="navbar-right" *ngIf="!isSM; else mobile">
     <div class="navbar-right-item">
       <a routerLink="shopping" routerLinkActive="active">Comprar</a>
     </div>
@@ -30,4 +29,20 @@
       <a routerLink="order" routerLinkActive="active">Pedidos</a>
     </div>
   </div>
+
+  <ng-template #mobile>
+    <div class="navbar-right">
+      <img
+        src="../../../../assets/images/menu.svg"
+        alt="abrir menu"
+        (click)="toggleMenu()"
+        height="20"
+      />
+    </div>
+
+    <app-mobile-menu
+      [open]="openMobile"
+      (onClose)="toggleMenu()"
+    ></app-mobile-menu>
+  </ng-template>
 </nav>

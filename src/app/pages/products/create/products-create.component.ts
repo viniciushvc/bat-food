@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { CategoryService } from '../category.service'
+import { ProductsService } from '../products.service'
 
 @Component({
-  selector: 'app-category-create',
-  templateUrl: './category-create.component.html',
+  selector: 'app-products-create',
+  templateUrl: './products-create.component.html',
   styleUrls: ['../../../../assets/scss/form.scss'],
 })
-export class CategoryCreateComponent implements OnInit {
+export class ProductsCreateComponent implements OnInit {
   /**
    * Formulário de cadastro
    */
   form: FormGroup
 
-  constructor(private fb: FormBuilder, private service: CategoryService) {
+  constructor(private fb: FormBuilder, private service: ProductsService) {
     this.form = this.fb.group({
       id: ['', Validators.required],
       nome: ['', Validators.required],

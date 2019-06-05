@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { ActivatedRoute } from '@angular/router'
-import { CategoryService } from '../category.service'
+import { ProductsService } from '../products.service'
 
 @Component({
-  selector: 'app-category-edit',
-  templateUrl: './category-edit.component.html',
+  selector: 'app-products-edit',
+  templateUrl: './products-edit.component.html',
   styleUrls: ['../../../../assets/scss/form.scss'],
 })
-export class CategoryEditComponent implements OnInit {
+export class ProductsEditComponent implements OnInit {
   /**
    * Formulário de edição
    */
@@ -17,7 +17,7 @@ export class CategoryEditComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private service: CategoryService
+    private service: ProductsService
   ) {
     this.form = this.fb.group({
       id: ['', Validators.required],

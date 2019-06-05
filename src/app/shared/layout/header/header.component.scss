@@ -7,6 +7,20 @@
   padding: 1rem;
   position: sticky;
   font-size: 1.1rem;
+  z-index: 1;
+}
+
+.loading {
+  margin-top: 0.7rem;
+}
+
+@media (max-width: $break-small) {
+  .navbar {
+    top: 0;
+  }
+  .loading {
+    margin-top: 1rem;
+  }
 }
 
 a {

@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Categorias</h1>
+
+  <btn label="Nova categoria" class="btn-success" routerLink="create"></btn>
+
+  <div class="mt-4">
+    <div class="form">
+      <div class="table-responsive">
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th>Nome</th>
+
+              <th>Descrição</th>
+
+              <th class="text-center">Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let categorie of categories">
+              <td>{{ categorie.nome }}</td>
+
+              <td>{{ categorie.descricao }}</td>
+
+              <td class="text-center">
+                <a [routerLink]="['category', categorie.id, 'edit']">
+                  <img
+                    src="../../../../assets/images/edit.svg"
+                    alt="editar registro"
+                    height="20"
+                  />
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

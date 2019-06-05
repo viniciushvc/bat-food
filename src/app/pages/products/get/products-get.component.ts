@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core'
-import { CategoryService } from '../category.service'
+import { ProductsService } from '../products.service'
 
 @Component({
-  selector: 'app-category-get',
-  templateUrl: './category-get.component.html',
+  selector: 'app-products-get',
+  templateUrl: './products-get.component.html',
   styleUrls: [
     '../../../../assets/scss/form.scss',
     '../../../../assets/scss/table.scss',
   ],
 })
-export class CategoryGetComponent implements OnInit {
+export class ProductsGetComponent implements OnInit {
   categories = []
 
-  constructor(private service: CategoryService) {}
+  constructor(private service: ProductsService) {}
 
   ngOnInit() {
     this.service.getAll().subscribe(res => (this.categories = res))
