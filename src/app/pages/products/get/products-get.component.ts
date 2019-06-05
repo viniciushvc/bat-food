@@ -5,10 +5,7 @@ import { ProductsService } from '../products.service'
 @Component({
   selector: 'app-products-get',
   templateUrl: './products-get.component.html',
-  styleUrls: [
-    '../../../../assets/scss/form.scss',
-    '../../../../assets/scss/table.scss',
-  ],
+  styleUrls: ['../../../../assets/scss/table.scss'],
 })
 export class ProductsGetComponent implements OnInit {
   /**
