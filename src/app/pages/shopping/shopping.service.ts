@@ -5,7 +5,7 @@ import { Observable } from 'rxjs'
 @Injectable({
   providedIn: 'root',
 })
-export class HomeService {
+export class ShoppingService {
   constructor(private service: ApiService) {}
 
   getData(): Observable<any> {

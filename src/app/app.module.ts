@@ -8,27 +8,15 @@ import { AppComponent } from './app.component'
 
 // layout
 import { HeaderComponent } from './shared/layout/header/header.component'
-import { FooterComponent } from './shared/layout/footer/footer.component'
 
 // components
 import { ComponentsModule } from './components/components.module'
 
-// guard
-import { AuthGuard } from './core/auth/auth-guard.service'
-
 // pages
-import { LoginComponent } from './pages/login/login.component'
-
-// services
-import { TokenService } from './core/auth/token.service'
+import { HomeComponent } from './pages/home/home.component'
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, HomeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -37,7 +25,7 @@ import { TokenService } from './core/auth/token.service'
     ComponentsModule,
     AppRoutesModule,
   ],
-  providers: [AuthGuard, TokenService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

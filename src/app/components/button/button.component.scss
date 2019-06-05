@@ -15,6 +15,7 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   cursor: pointer;
+  font-family: 'Nunito', sans-serif;
 }
 
 .btn-success {
@@ -23,6 +24,10 @@
 
 .btn-primary {
   background-color: $primary-color;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
 }
 
 .btn-warning {

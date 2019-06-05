@@ -1,4 +1,4 @@
-# Batfood
+# BatRango
 
 Projeto desenvolvido por: Vinicius, Felippe, Leonardo e Lucas.
 

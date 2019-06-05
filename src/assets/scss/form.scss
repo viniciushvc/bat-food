@@ -1,0 +1,22 @@
+@import './variables';
+
+/* Inputs */
+.form {
+  width: 100%;
+  box-shadow: 4px 4px 44px rgba(0, 0, 0, 0.1);
+  background-color: $light-color;
+  border-radius: 4px;
+}
+
+/* Inputs */
+.form-control {
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 1px;
+  height: 40px;
+  padding: 13px 15px;
+  border: 1px solid #e5edef;
+  transition: 0.3s;
+  border-radius: 4px;
+  margin: 2px 6px 16px 0;
+}

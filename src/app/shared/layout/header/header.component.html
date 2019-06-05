@@ -1,22 +1,33 @@
 <nav class="navbar">
   <div class="navbar-brand">
-    Batfood
+    <a routerLink="/">BatRango</a>
   </div>
 
-  <div *ngIf="api.isLoading">...</div>
-
-  <!-- <ul>
-    <li>
-      <a routerLink="/home" routerLinkActive="active">Home</a>
-    </li>
-    <li>
-      <a routerLink="/order" routerLinkActive="active">Order</a>
-    </li>
-  </ul> -->
+  <div *ngIf="api.isLoading">
+    <img
+      style="margin-top: .7rem;"
+      class="ml-3"
+      src="../../../../assets/images/loading.svg"
+      alt="carregando"
+      height="10"
+    />
+  </div>
 
   <div class="navbar-right">
-    <div class="navbar-right-item">Sacola</div>
+    <div class="navbar-right-item">
+      <a routerLink="shopping" routerLinkActive="active">Comprar</a>
+    </div>
 
-    <div class="navbar-right-item" (click)="authGuard.logOut()">Sair</div>
+    <div class="navbar-right-item">
+      <a routerLink="category" routerLinkActive="active">Categoria</a>
+    </div>
+
+    <div class="navbar-right-item">
+      <a routerLink="products" routerLinkActive="active">Produtos</a>
+    </div>
+
+    <div class="navbar-right-item">
+      <a routerLink="order" routerLinkActive="active">Pedidos</a>
+    </div>
   </div>
 </nav>

@@ -1,12 +1,22 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 
-import { CategoryComponent } from './category.component'
+import { CategoryGetComponent } from './get/category-get.component'
+import { CategoryCreateComponent } from './create/category-create.component'
+import { CategoryEditComponent } from './edit/category-edit.component'
 
 const routes: Routes = [
   {
     path: '',
-    component: CategoryComponent,
+    component: CategoryGetComponent,
+  },
+  {
+    path: 'create',
+    component: CategoryCreateComponent,
+  },
+  {
+    path: 'edit/:id',
+    component: CategoryEditComponent,
   },
 ]
 

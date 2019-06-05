@@ -1,55 +1,11 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div *ngFor="let category of list">
-        <h1>{{ category.name }}</h1>
+<div class="flex">
+  <div class="home">
+    <div class="home-card">
+      <h1>Bem vindo ao BatRango</h1>
 
-        <div class="row">
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            *ngFor="let item of category.items"
-          >
-            <div class="card" (click)="selectItem(item)">
-              <img class="card-image" [src]="item.image" alt="item.name" />
-
-              <div class="card-content">
-                <h1 class="card-title">{{ item.name }}</h1>
-
-                <p class="card-description">{{ item.description }}</p>
-
-                <span class="card-price">R${{ item.price | price }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="order">
-        <div class="order-title">Pedido</div>
-
-        <div
-          class="order-item"
-          *ngFor="let selected of selectedItems; index as i"
-        >
-          {{ selected.name }} x R${{ selected.price | price }}
-
-          <h5 (click)="removeItem(i)">Remover item</h5>
-        </div>
-
-        <div class="order-total" *ngIf="totalPay > 0">
-          <h2 class="order-price">Valor total</h2>
-
-          <h2 *ngIf="totalPay">R${{ totalPay | price }}</h2>
-        </div>
-
-        <btn
-          *ngIf="selectedItems.length"
-          class="btn-danger btn-lg btn-block bold"
-          label="Finalizar pedido"
-          (onClick)="finishOrder()"
-        ></btn>
-      </div>
+      <h3>
+        <a routerLink="shopping">Realizar pedido</a>
+      </h3>
     </div>
   </div>
 </div>

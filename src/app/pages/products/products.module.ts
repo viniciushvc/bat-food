@@ -1,20 +1,19 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ProductsRoutesModule } from './products.routes'
 
-import { SubcategoryRoutesModule } from './subcategory.routes'
-
-import { SubcategoryComponent } from './subcategory.component'
+import { ProductsComponent } from './products.component'
 
 @NgModule({
-  declarations: [SubcategoryComponent],
+  declarations: [ProductsComponent],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    SubcategoryRoutesModule,
+    ProductsRoutesModule,
   ],
   providers: [],
   bootstrap: [],
 })
-export class SubcategoryModule {}
+export class ProductsModule {}

@@ -1,12 +1,17 @@
 @import '../../../../assets/scss/variables';
 
 .navbar {
-  background-color: $white-color;
+  background-color: #ea1d2c;
+  color: #fff;
   display: flex;
   padding: 1rem;
   position: sticky;
-  border-bottom: 1px solid #f2f2f2;
   font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
 }
 
 .navbar-brand {
