@@ -5,13 +5,14 @@ Delivery online de comida
 ## Dependências
 
 - Node 10+
-- @angular/cli@8.0.0
+- `npm install -g @angular/cli@8.0.0`
+- `npm install -g json-server@0.15.0`
 
 ## Rodar projeto
 
-`npm install` para instalar as dependências.
-
-Para rodar o projeto: `ng serve`
+- Instalar as dependências: `npm install`
+- Iniciar o servidor: `json-server --watch src/assets/db.json`
+- Para rodar o projeto: `ng serve`
 
 ## Compilar projeto
 
