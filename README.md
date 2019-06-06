@@ -2,10 +2,6 @@
 
 Delivery online de comida
 
-Materia: Programação Web.
-
-Professor: Rodrigo.
-
 ## Dependências
 
 - Node 10+
@@ -25,7 +21,7 @@ Para compilar o projeto: `ng build --prod`
 
 Para executar testes: `ng test`
 
-Versão do angular `8.0`
+Versão do angular `8.0.0`
 
 ### Plugins adicionais do editor
 
