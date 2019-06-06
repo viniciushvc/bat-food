@@ -1,6 +1,6 @@
 # BatRango
 
-Projeto desenvolvido por: Vinicius, Felippe, Leonardo e Lucas.
+Delivery online de comida
 
 Materia: Programação Web.
 
