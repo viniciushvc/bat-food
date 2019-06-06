@@ -9,6 +9,6 @@ export class ShoppingService {
   constructor(private service: ApiService) {}
 
   post(data: object): Observable<any> {
-    return this.service.post('pedido', data)
+    return this.service.post('orders', data)
   }
 }

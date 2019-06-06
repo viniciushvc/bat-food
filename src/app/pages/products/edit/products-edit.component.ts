@@ -50,7 +50,7 @@ export class ProductsEditComponent implements OnInit {
       name: ['', Validators.required],
       price: ['', Validators.required],
       description: ['', Validators.required],
-      category_id: ['', Validators.required],
+      idCategory: ['', Validators.required],
       image: ['', Validators.required],
     })
   }

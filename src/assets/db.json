@@ -3,25 +3,69 @@
     {
       "id": 1,
       "name": "Picanha",
-      "price": "500",
+      "price": "50",
       "description": "Picanha Maturatta",
-      "category_id": 1,
+      "idCategory": "6",
       "image": "https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000pqxr0MAA/599ee7c6e4b09522ea3c2e5b.jpg&w=620&h=400"
     },
     {
       "id": 2,
-      "name": "213",
-      "price": "123",
-      "description": "123",
-      "category_id": "6",
-      "image": "123"
+      "name": "Fraldinha",
+      "price": "30",
+      "description": "Feita na manteiga",
+      "idCategory": "6",
+      "image": "https://www.receitadevovo.com.br/gbau/sistema/receitas/img/fraldinha-assada-no-forno_25032019195510.jpg"
+    },
+    {
+      "name": "Mousse de maracujá",
+      "price": "10",
+      "description": "Com calda de maracujá por cima",
+      "idCategory": "7",
+      "image": "https://abrilmdemulher.files.wordpress.com/2016/09/receita-musse-pratica-de-maracuja.jpg?quality=90&strip=info&w=620&h=372&crop=1",
+      "id": 3
+    },
+    {
+      "name": "Suco de laranja",
+      "price": "8",
+      "description": "Excelente para dar uma relaxada",
+      "idCategory": "9",
+      "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-suco-de-laranja.jpg",
+      "id": 4
+    },
+    {
+      "name": "Salada caesar",
+      "price": "20",
+      "description": "Com molho secreto",
+      "idCategory": "10",
+      "image": "https://www.dicasdemulher.com.br/wp-content/uploads/2017/10/salada-caesar-3.jpg",
+      "id": 5
     }
   ],
   "categories": [
     {
       "id": 6,
-      "name": "anus",
-      "description": "ste"
+      "name": "Carnes",
+      "description": "Carnes variadas"
+    },
+    {
+      "name": "Doces",
+      "description": "Deliciosos doces",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "name": "Refrigerantes",
+      "description": "..."
+    },
+    {
+      "name": "Sucos",
+      "description": "Sucos naturais",
+      "id": 9
+    },
+    {
+      "name": "Saladas",
+      "description": "Ingredientes frescos",
+      "id": 10
     }
   ],
   "orders": [
@@ -34,6 +78,17 @@
         2,
         3
       ]
+    },
+    {
+      "totalPrice": 40,
+      "user": "admin",
+      "idCategory": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "id": 2
     }
   ]
 }

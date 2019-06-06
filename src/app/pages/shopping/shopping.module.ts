@@ -4,13 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ShoppingRoutesModule } from './shopping.routes'
 import { ComponentsModule } from 'src/app/components/components.module'
 
-// page
 import { ShoppingComponent } from './shopping.component'
 
-// pipe
-import { PricePipe } from 'src/app/shared/pipes/price.pipe'
-
 import { ShoppingService } from './shopping.service'
+
+import { PricePipe } from 'src/app/shared/pipes/price.pipe'
 
 @NgModule({
   declarations: [ShoppingComponent, PricePipe],

@@ -55,6 +55,7 @@
     "use-pipe-transform-interface": true,
     "semicolon": [true, "never"],
     "disable-next-line": "curly",
-    "curly": [false]
+    "curly": [false],
+    "radix": false
   }
 }

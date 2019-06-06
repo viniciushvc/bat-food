@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { ShoppingService } from './shopping.service'
 import { ProductsService } from '../products/products.service'
 import { CategoryService } from '../category/category.service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-shopping',
@@ -12,12 +13,12 @@ export class ShoppingComponent implements OnInit {
   /**
    * Lista de produtos
    */
-  products = []
+  products$: Observable<any>
 
   /**
    * Lista de categorias
    */
-  categories = []
+  categories$: Observable<any>
 
   /**
    * Lista de itens do pedido
@@ -27,7 +28,7 @@ export class ShoppingComponent implements OnInit {
   /**
    * Valor total a pagar
    */
-  totalPay = 0
+  totalPrice: number = 0
 
   constructor(
     private service: ShoppingService,
@@ -48,23 +49,25 @@ export class ShoppingComponent implements OnInit {
    * Carrega lista de produtos
    */
   private getProducts() {
-    this.productsService.getAll().subscribe(r => (this.products = r))
+    this.products$ = this.productsService.getAll()
   }
 
   /**
    * Carrega lista de produtos
    */
   private getCategories() {
-    this.categoryService.getAll().subscribe(r => (this.categories = r))
+    this.categories$ = this.categoryService.getAll()
   }
 
   /**
    * Seleciona produto
    */
   selectItem(item: any) {
+    console.log(this.selectedItems)
+
     this.selectedItems.push(item)
 
-    this.totalPay += item.preco
+    this.totalPrice += parseInt(item.price)
   }
 
   /**
@@ -72,7 +75,7 @@ export class ShoppingComponent implements OnInit {
    */
   removeItem(index: number) {
     this.selectedItems = this.selectedItems.filter((p, i) => {
-      if (i === index) this.totalPay -= p.preco
+      if (i === index) this.totalPrice -= parseInt(p.price)
 
       return i !== index
     })
@@ -83,15 +86,13 @@ export class ShoppingComponent implements OnInit {
    */
   finishOrder() {
     const order = {
-      valor_total: this.totalPay,
-      cliente: 'admin',
-      subcategoria_ids: this.selectedItems.map(p => p.id),
+      totalPrice: this.totalPrice,
+      user: 'admin',
+      idCategory: this.selectedItems.map(p => p.id),
     }
 
     this.service.post(order).subscribe(() => {
-      alert('Pedido realizado')
-
-      this.totalPay = 0
+      this.totalPrice = 0
 
       this.selectedItems = []
     })
