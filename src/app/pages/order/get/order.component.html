@@ -13,26 +13,18 @@
 
               <th>Cliente</th>
 
-              <!-- <th class="text-center">Editar</th> -->
+              <th class="text-center">Detalhes</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let order of orders$ | async">
               <td>{{ order.id }}</td>
 
-              <td>{{ order.valor_total }}</td>
+              <td>{{ order.totalPrice }}</td>
 
-              <td>{{ order.cliente }}</td>
+              <td>{{ order.user }}</td>
 
-              <!-- <td class="text-center">
-                <a [routerLink]="['category', order.id, 'edit']">
-                  <img
-                    src="../../../../assets/images/edit.svg"
-                    alt="editar registro"
-                    height="20"
-                  />
-                </a>
-              </td> -->
+              <td class="text-center"></td>
             </tr>
           </tbody>
         </table>

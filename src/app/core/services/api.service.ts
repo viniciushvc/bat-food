@@ -24,21 +24,21 @@ export class ApiService {
       .pipe(finalize(() => (this.isLoading = false)))
   }
 
-  put(path: string, body: object = {}): Observable<any> {
+  put(path: string, id: number, body: object = {}): Observable<any> {
     return this.http
-      .put(`${environment.api_url}${path}`, JSON.stringify(body))
+      .put(`${environment.api_url}${path}/${id}`, body)
       .pipe(catchError(this.formatErrors))
   }
 
-  post(path: string, body: object = {}): Observable<any> {
+  post(path: string, body: object): Observable<any> {
     return this.http
-      .post(`${environment.api_url}${path}`, JSON.stringify(body))
+      .post(`${environment.api_url}${path}`, body)
       .pipe(catchError(this.formatErrors))
   }
 
-  delete(path): Observable<any> {
+  delete(path: string, id: number): Observable<any> {
     return this.http
-      .delete(`${environment.api_url}${path}`)
+      .delete(`${environment.api_url}${path}/${id}`)
       .pipe(catchError(this.formatErrors))
   }
 }

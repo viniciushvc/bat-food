@@ -8,6 +8,11 @@
   border-radius: 4px;
 }
 
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid #ff636d;
+  background-color: #fff8f8;
+}
+
 /* Inputs */
 .form-control {
   width: 100%;

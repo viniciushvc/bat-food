@@ -7,33 +7,31 @@ import { shareReplay } from 'rxjs/operators'
   providedIn: 'root',
 })
 export class OrderService {
+  /**
+   * Caminho da API
+   */
+  apiUrl: string = 'orders'
+
   constructor(private service: ApiService) {}
 
   /**
    * Carrega todos os pedidos
    */
   getAll(): Observable<any> {
-    return this.service.get('pedido').pipe(shareReplay())
+    return this.service.get(this.apiUrl).pipe(shareReplay())
   }
 
   /**
    * Carrega pedido específico
    */
   get(id: string): Observable<any> {
-    return this.service.get(`pedido/${id}`)
-  }
-
-  /**
-   * Cria novo pedido
-   */
-  post(data: object): Observable<any> {
-    return this.service.post('pedido', data)
+    return this.service.get(`${this.apiUrl}/${id}`)
   }
 
   /**
    * Atualiza pedido
    */
-  put(data: object): Observable<any> {
-    return this.service.put('pedido', data)
+  put(data: any): Observable<any> {
+    return this.service.put(this.apiUrl, data.id, data)
   }
 }

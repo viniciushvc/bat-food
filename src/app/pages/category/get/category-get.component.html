@@ -13,24 +13,33 @@
 
               <th>Descrição</th>
 
-              <!-- <th class="text-center">Editar</th> -->
+              <th class="text-center">Editar</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let categorie of categories$ | async">
-              <td>{{ categorie.nome }}</td>
+            <tr *ngFor="let category of categories$ | async">
+              <td>{{ category.name }}</td>
 
-              <td>{{ categorie.descricao }}</td>
+              <td>{{ category.description }}</td>
 
-              <!-- <td class="text-center">
-                <a [routerLink]="['category', categorie.id, 'edit']">
+              <td class="text-center">
+                <a (click)="delete(category.id)">
+                  <img
+                    class="mr-3"
+                    src="../../../../assets/images/delete.svg"
+                    alt="deletar registro"
+                    height="20"
+                  />
+                </a>
+
+                <a [routerLink]="[category.id]">
                   <img
                     src="../../../../assets/images/edit.svg"
                     alt="editar registro"
                     height="20"
                   />
                 </a>
-              </td> -->
+              </td>
             </tr>
           </tbody>
         </table>

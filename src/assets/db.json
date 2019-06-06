@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Picanha",
+      "price": "500",
+      "description": "Picanha Maturatta",
+      "category_id": 1,
+      "image": "https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000pqxr0MAA/599ee7c6e4b09522ea3c2e5b.jpg&w=620&h=400"
+    },
+    {
+      "id": 2,
+      "name": "213",
+      "price": "123",
+      "description": "123",
+      "category_id": "6",
+      "image": "123"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "anus",
+      "description": "ste"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "totalPrice": 50,
+      "user": "admin",
+      "idProducts": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

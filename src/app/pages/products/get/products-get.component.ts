@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Observable } from 'rxjs'
 
 import { ProductsService } from '../products.service'
 
@@ -11,7 +12,7 @@ export class ProductsGetComponent implements OnInit {
   /**
    * Lista de produtos
    */
-  products = []
+  products$: Observable<any>
 
   constructor(private service: ProductsService) {}
 
@@ -26,6 +27,15 @@ export class ProductsGetComponent implements OnInit {
    * Carrega lista de produtos
    */
   private get() {
-    this.service.getAll().subscribe(res => (this.products = res))
+    this.products$ = this.service.getAll()
+  }
+
+  /**
+   * Remove produto
+   * @param id Código do registro
+   */
+  delete(id: number) {
+    if (confirm('Deseja remover este registro?'))
+      this.service.delete(id).subscribe(() => this.get())
   }
 }

@@ -13,24 +13,37 @@
 
               <th>Descrição</th>
 
-              <!-- <th class="text-center">Editar</th> -->
+              <th>Valor</th>
+
+              <th class="text-center">Editar</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let product of products">
-              <td>{{ product.nome }}</td>
+            <tr *ngFor="let product of products$ | async">
+              <td>{{ product.name }}</td>
 
-              <td>{{ product.descricao }}</td>
+              <td>{{ product.description }}</td>
 
-              <!-- <td class="text-center">
-                <a [routerLink]="['category', product.id, 'edit']">
+              <td>R$ {{ product.price }}</td>
+
+              <td class="text-center">
+                <a (click)="delete(product.id)">
+                  <img
+                    class="mr-3"
+                    src="../../../../assets/images/delete.svg"
+                    alt="deletar registro"
+                    height="20"
+                  />
+                </a>
+
+                <a [routerLink]="[product.id]">
                   <img
                     src="../../../../assets/images/edit.svg"
                     alt="editar registro"
                     height="20"
                   />
                 </a>
-              </td> -->
+              </td>
             </tr>
           </tbody>
         </table>

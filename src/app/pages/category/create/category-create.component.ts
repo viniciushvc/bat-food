@@ -33,9 +33,8 @@ export class CategoryCreateComponent implements OnInit {
    */
   private createForm() {
     this.form = this.fb.group({
-      id: ['', Validators.required],
-      nome: ['', Validators.required],
-      descricao: ['', Validators.required],
+      name: ['', Validators.required],
+      description: ['', Validators.required],
     })
   }
 
@@ -47,5 +46,9 @@ export class CategoryCreateComponent implements OnInit {
       this.service
         .post(this.form.value)
         .subscribe(() => this.router.navigate(['/category']))
+    else
+      Object.keys(this.form.controls).forEach(campo =>
+        this.form.get(campo).markAsTouched()
+      )
   }
 }
