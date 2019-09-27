@@ -1,6 +1,4 @@
-# BatRango
-
-Delivery online de comida
+# Delivery online de comida
 
 ## Dependências
 
